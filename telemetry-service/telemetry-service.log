@@ -14604,3 +14604,193 @@
     "if-none-match": "W/\"bf7-eB0BvMpJsaPHZONFdKZ/YgvEQUE\""
   }
 }
+2025-09-22T17:43:39.726Z [[32minfo[39m]: GET /telemetry/stats {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"13b-If2otnj2fHnZN7AzAk6yHBCJTVI\""
+  }
+}
+2025-09-22T17:43:39.732Z [[32minfo[39m]: GET /telemetry/spans {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"bf7-eB0BvMpJsaPHZONFdKZ/YgvEQUE\""
+  }
+}
+2025-09-22T17:44:39.735Z [[32minfo[39m]: GET /telemetry/stats {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"13b-If2otnj2fHnZN7AzAk6yHBCJTVI\""
+  }
+}
+2025-09-22T17:44:39.740Z [[32minfo[39m]: GET /telemetry/spans {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"bf7-eB0BvMpJsaPHZONFdKZ/YgvEQUE\""
+  }
+}
+2025-09-22T17:45:39.728Z [[32minfo[39m]: GET /telemetry/stats {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"13b-If2otnj2fHnZN7AzAk6yHBCJTVI\""
+  }
+}
+2025-09-22T17:45:39.735Z [[32minfo[39m]: GET /telemetry/spans {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"bf7-eB0BvMpJsaPHZONFdKZ/YgvEQUE\""
+  }
+}
+2025-09-22T17:46:39.729Z [[32minfo[39m]: GET /telemetry/stats {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"13b-If2otnj2fHnZN7AzAk6yHBCJTVI\""
+  }
+}
+2025-09-22T17:46:39.738Z [[32minfo[39m]: GET /telemetry/spans {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"bf7-eB0BvMpJsaPHZONFdKZ/YgvEQUE\""
+  }
+}
+2025-09-22T17:47:39.735Z [[32minfo[39m]: GET /telemetry/stats {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"13b-If2otnj2fHnZN7AzAk6yHBCJTVI\""
+  }
+}
+2025-09-22T17:47:39.740Z [[32minfo[39m]: GET /telemetry/spans {
+  "headers": {
+    "host": "localhost:4318",
+    "connection": "keep-alive",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Microsoft Edge\";v=\"140\"",
+    "dnt": "1",
+    "sec-ch-ua-mobile": "?0",
+    "accept": "*/*",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:4318/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "if-none-match": "W/\"bf7-eB0BvMpJsaPHZONFdKZ/YgvEQUE\""
+  }
+}

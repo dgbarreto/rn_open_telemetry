@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemetry Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007AFF;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .spans-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: #007AFF;
+            color: white;
+        }
+        
+        .btn-danger {
+            background: #FF3B30;
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+        
+        .span-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            padding: 15px;
+            background: #fafafa;
+        }
+        
+        .span-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .span-name {
+            font-weight: bold;
+            color: #007AFF;
+        }
+        
+        .span-duration {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .span-status {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .status-ok {
+            background: #34C759;
+            color: white;
+        }
+        
+        .status-error {
+            background: #FF3B30;
+            color: white;
+        }
+        
+        .span-details {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .span-attributes {
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.8em;
+        }
+        
+        .no-data {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .auto-refresh {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        input[type="checkbox"] {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 OpenTelemetry Dashboard</h1>
+            <p>Real-time telemetry data from your React Native app</p>
+        </div>
+        
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats will be populated here -->
+        </div>
+        
+        <div class="spans-container">
+            <div class="controls">
+                <button class="btn btn-primary" onclick="refreshData()">🔄 Refresh</button>
+                <button class="btn btn-danger" onclick="clearData()">🗑️ Clear All Data</button>
+                <div class="auto-refresh">
+                    <input type="checkbox" id="autoRefresh" onchange="toggleAutoRefresh()">
+                    <label for="autoRefresh">Auto Refresh (5s)</label>
+                </div>
+            </div>
+            
+            <h2>Recent Spans</h2>
+            <div id="spansContainer">
+                <div class="loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let autoRefreshInterval = null;
+        
+        async function fetchStats() {
+            try {
+                const response = await fetch('/telemetry/stats');
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching stats:', error);
+                return null;
+            }
+        }
+        
+        async function fetchSpans() {
+            try {
+                const response = await fetch('/telemetry/spans');
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching spans:', error);
+                return null;
+            }
+        }
+        
+        function renderStats(stats) {
+            if (!stats) return;
+            
+            const statsGrid = document.getElementById('statsGrid');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.totalSpans}</div>
+                    <div class="stat-label">Total Spans</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.uniqueServices}</div>
+                    <div class="stat-label">Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.uniqueOperations}</div>
+                    <div class="stat-label">Operations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.successCount}</div>
+                    <div class="stat-label">Success</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.errorCount}</div>
+                    <div class="stat-label">Errors</div>
+                </div>
+            `;
+        }
+        
+        function renderSpans(data) {
+            const container = document.getElementById('spansContainer');
+            
+            if (!data || !data.spans || data.spans.length === 0) {
+                container.innerHTML = '<div class="no-data">No telemetry data yet. Interact with your React Native app to see spans here.</div>';
+                return;
+            }
+            
+            const spansHtml = data.spans.map(span => {
+                const statusClass = span.status === 'OK' ? 'status-ok' : 'status-error';
+                const attributes = Object.keys(span.attributes).length > 0 
+                    ? `<div class="span-attributes">${JSON.stringify(span.attributes, null, 2)}</div>`
+                    : '';
+                
+                return `
+                    <div class="span-item">
+                        <div class="span-header">
+                            <div class="span-name">${span.operationName}</div>
+                            <div class="span-duration">${span.duration}ms</div>
+                            <div class="span-status ${statusClass}">${span.status}</div>
+                        </div>
+                        <div class="span-details">
+                            Service: ${span.serviceName} | 
+                            Trace: ${span.traceId.substring(0, 8)}... | 
+                            Time: ${new Date(span.timestamp).toLocaleTimeString()}
+                        </div>
+                        ${attributes}
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = spansHtml;
+        }
+        
+        async function refreshData() {
+            const [stats, spans] = await Promise.all([fetchStats(), fetchSpans()]);
+            renderStats(stats);
+            renderSpans(spans);
+        }
+        
+        async function clearData() {
+            if (!confirm('Are you sure you want to clear all telemetry data?')) {
+                return;
+            }
+            
+            try {
+                await fetch('/telemetry/clear', { method: 'DELETE' });
+                await refreshData();
+            } catch (error) {
+                console.error('Error clearing data:', error);
+            }
+        }
+        
+        function toggleAutoRefresh() {
+            const checkbox = document.getElementById('autoRefresh');
+            
+            if (checkbox.checked) {
+                autoRefreshInterval = setInterval(refreshData, 5000);
+            } else {
+                if (autoRefreshInterval) {
+                    clearInterval(autoRefreshInterval);
+                    autoRefreshInterval = null;
+                }
+            }
+        }
+        
+        // Initial load
+        refreshData();
+        
+        // Auto-refresh by default
+        document.getElementById('autoRefresh').checked = true;
+        toggleAutoRefresh();
+    </script>
+</body>
+</html>
